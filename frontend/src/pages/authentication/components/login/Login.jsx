@@ -1,4 +1,4 @@
-
+import "../login/style.css"
 const Login = ({
   setIsLogin,
   handleInputChange,
@@ -12,7 +12,7 @@ const Login = ({
 }) => {
 
   return (
-    <div className=" login-form">
+    <div className="login-form">
       <h2>LinkedIn</h2>
       <input
         type="text"
@@ -20,7 +20,6 @@ const Login = ({
         onChange={(e) => handleInputChange(e, "email")}
       />
       <input
-        className=" rounded"
         type="password"
         placeholder="Password"
         onChange={(e) => handleInputChange(e, "password")}

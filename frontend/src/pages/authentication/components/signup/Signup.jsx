@@ -12,7 +12,7 @@ const Signup = ({
   setCredentials,
 }) => {
   return (
-    <div className="flex column full-width login-form">
+    <div className="full-width login-form">
       <h2 className="">LinkedIn</h2>
       <input
         type="text"
@@ -52,7 +52,7 @@ const Signup = ({
       <p>
         Already have an account?{" "}
         <span
-          className="col-primary bold"
+          className=""
           onClick={() => {
             setIncorrect(false);
             setIsLogin(true);

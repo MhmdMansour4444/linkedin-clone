@@ -122,7 +122,7 @@ const Authentication = () => {
   }
 
   return(
-    <div className="flex center auth-box auth-page">
+    <div className=" auth-box auth-page">
       {isLogin ?(
         <Login 
         setIsLogin = {setIsLogin} 
