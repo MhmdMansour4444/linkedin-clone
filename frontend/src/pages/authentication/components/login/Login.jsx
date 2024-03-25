@@ -1,4 +1,5 @@
-import "../login/style.css"
+import "../../style.css"
+
 const Login = ({
   setIsLogin,
   handleInputChange,
