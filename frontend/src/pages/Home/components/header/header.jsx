@@ -12,19 +12,13 @@ const Header = () => {
           <div className="nav-buttons">
             <ul className="nav-menu">
               <li className="nav-item">
-                <Icon title="Homeabc" />
+              <Icon title="Home" icon="fa-house" />
               </li>
               <li className="nav-item">
-                <a href="/" className="nav-link">
-                  <i className="fa-solid fa-user-group icon"></i>
-                  My Network
-                </a>
+              <Icon title="My Network" icon="fa-user-group" />
               </li>
               <li className="nav-item">
-                <a href="/" className="nav-link">
-                  <i className="fa-solid fa-briefcase icon"></i>
-                  Jobs
-                </a>
+              <Icon title="Jobs" icon="fa-briefcase" />
               </li>
             </ul>
             <button className="nav-button"></button>
