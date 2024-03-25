@@ -1,0 +1,51 @@
+.post-box {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .post-button{
+    display: flex;
+    justify-content: center;
+}
+  
+  .post-box h2 {
+    text-align: left;
+  }
+  
+  .post-box form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .post-box textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+  }
+  
+  .post-box input[type="file"] {
+    margin-bottom: 10px;
+  }
+  
+  .post-box button {
+    padding: 10px 20px;
+    background-color: #0077b5;
+    color: #fff;
+    border: none;
+    width: 100px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .post-box button:hover {
+    background-color: #005f88;
+  }
