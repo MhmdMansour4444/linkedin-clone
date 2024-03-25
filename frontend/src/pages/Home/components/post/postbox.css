@@ -13,6 +13,7 @@
   .post-button{
     display: flex;
     justify-content: center;
+    font-family: "Poppins";
 }
   
   .post-box h2 {
@@ -48,4 +49,8 @@
   
   .post-box button:hover {
     background-color: #005f88;
+  }
+
+  .post-box + .posts-container {
+    margin-top: 20px;
   }

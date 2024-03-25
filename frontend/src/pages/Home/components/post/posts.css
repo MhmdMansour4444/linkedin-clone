@@ -3,10 +3,7 @@
     margin: 0 auto;
 }
 
-.post-button{
-    display: flex;
-    justify-content: center;
-}
+
 
 .post {
     border: 1px solid #ccc;

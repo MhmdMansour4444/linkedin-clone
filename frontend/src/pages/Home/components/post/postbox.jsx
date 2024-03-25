@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './postbox.css'
+import '../header/header.css'
 
 const PostBox = ({ onPost }) => {
   const [text, setText] = useState('');

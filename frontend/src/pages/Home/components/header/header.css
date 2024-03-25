@@ -1,7 +1,8 @@
 .navbar {
-    background-color: #ffffff; /* LinkedIn's blue color */
+    background-color: #ffffff;
     padding: 10px 0;
     border-bottom: 0.5px solid #58656c;
+    margin-bottom: 20px;
   }
   
   .navbar-container {
