@@ -1,5 +1,5 @@
 .auth-page {
-    background-color: rgb(236, 110, 110);
+    background-color: rgb(255, 255, 255);
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
   }
@@ -20,9 +20,13 @@
     align-items: center;
     padding: 18px ;
   }
+
+  .login-form > h2 {
+    color: #0077b5;
+  }
   
   .login-form > button {
-    background-color: rgb(76, 92, 237);
+    background-color: #0077b5;
     color: white;
     border-radius: 18px;
     cursor: pointer;
@@ -35,15 +39,27 @@
     display: flex;
     height: 40px;
     width: 100%;
-    border: 1px solid black;
+    border: 2px solid #0077b5;
+    border-radius: 5px;
     outline: none;
   }
   
   .login-form > p {
-    color: white;
+    color: rgb(0, 0, 0);
   }
   
   .login-form > p > span {
-    color: rgb(76, 92, 237);
+    color: #0077b5;
   }
   
+  .incorrect {
+
+  }
+  
+  .red {
+    color: red;
+  }
+  
+  .invisible {
+    display: none;
+  }

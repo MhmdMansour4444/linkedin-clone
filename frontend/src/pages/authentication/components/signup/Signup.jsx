@@ -13,7 +13,7 @@ const Signup = ({
 }) => {
   return (
     <div className="full-width login-form">
-      <h2 className="">LinkedIn</h2>
+      <h2>LinkedIn</h2>
       <input
         type="text"
         placeholder="First Name"
