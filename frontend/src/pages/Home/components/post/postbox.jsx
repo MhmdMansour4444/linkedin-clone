@@ -45,7 +45,7 @@ const PostBox = ({ onPost, handleImageChange }) => {
             className="image-preview"
           />
         )}
-        <input type="file" accept="image/*" onChange={handleImageChange} />
+        <input type="file" onChange={handleImageChange} />
         {error && <p className="error-message">{error}</p>}
         <div className="post-button">
           <button type="submit">Post</button>

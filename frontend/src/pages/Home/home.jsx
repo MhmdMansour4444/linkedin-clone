@@ -5,7 +5,7 @@ import PostBox from './components/post/postbox';
 
 const Home = ({userId}) => {
   const [posts, setPosts] = useState([]);
-  const [image, setImage] = useState([]);
+  const [image, setImage] = useState();
   
   const fetchPosts = async () => {
     try {
@@ -35,6 +35,7 @@ const Home = ({userId}) => {
       file.type === "image/jpeg"
     ) {
       console.log(file.type);
+      console.log(file);
 
       const reader = new FileReader();
       reader.onloadend = () => {
