@@ -3,8 +3,10 @@ import Header from './components/header/header';
 import Post from './components/post/posts';
 import PostBox from './components/post/postbox';
 
-const Home = () => {
+const Home = ({userId}) => {
   const [posts, setPosts] = useState([]);
+  const [image, setImage] = useState([]);
+  
   const fetchPosts = async () => {
     try {
       const response = await fetch('http://localhost:4433/linkedin-clone/backend/getposts.php');
@@ -24,14 +26,34 @@ const Home = () => {
     fetchPosts();
   }, []);
 
-  const handlePost = async ({ content, post_image }) => {
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+
+    if (
+      file.type === "image/png" ||
+      file.type === "image/jpg" ||
+      file.type === "image/jpeg"
+    ) {
+      console.log(file.type);
+
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImage(reader.result);
+      };
+      reader.readAsDataURL(file);
+      console.log(image);
+    }
+  };
+
+
+  const handlePost = async ({ content, image }) => {
     try {
       const formData = new FormData();
       formData.append('content', content);
-      formData.append('image_url', post_image);
+      formData.append('image_url', image);
+      formData.append('user_id', userId);
 
-      
-  
+    
       const response = await fetch('http://localhost:4433/linkedin-clone/backend/createpost.php', {
         method: 'POST',
         body: formData,
@@ -52,7 +74,7 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <PostBox onPost={handlePost} />
+      <PostBox onPost={handlePost} handleImageChange = {handleImageChange}  />
       <div className="posts-container">
         {posts.map((post) => (
           <Post

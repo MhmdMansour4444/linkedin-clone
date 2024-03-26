@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./postbox.css";
 import "../header/header.css";
 
-const PostBox = ({ onPost }) => {
+const PostBox = ({ onPost, handleImageChange }) => {
   const [content, setContent] = useState("");
   const [postImage, setPostImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
@@ -12,19 +12,6 @@ const PostBox = ({ onPost }) => {
     setContent(event.target.value);
   };
 
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        const result = reader.result;
-        setPostImage(file);
-        setImagePreview(result);
-        setError(""); // Reset any previous error messages
-      };
-      reader.readAsDataURL(file);
-    }
-  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -52,7 +39,11 @@ const PostBox = ({ onPost }) => {
           onChange={handleTextChange}
         ></textarea>
         {imagePreview && (
-          <img src={imagePreview} alt="Selected Image Preview" className="image-preview" />
+          <img
+            src={imagePreview}
+            alt="Selected Image Preview"
+            className="image-preview"
+          />
         )}
         <input type="file" accept="image/*" onChange={handleImageChange} />
         {error && <p className="error-message">{error}</p>}
