@@ -21,7 +21,7 @@ const Header = () => {
               <Icon title="Jobs" icon="fa-briefcase" />
               </li>
             </ul>
-            <button className="nav-button"></button>
+            <button className="nav-button"><Icon title="Profile" icon="fa-user"></Icon></button>
             <button className="nav-button"></button>
           </div>
         </div>

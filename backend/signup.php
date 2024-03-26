@@ -1,33 +1,30 @@
 <?php
-
 include("connection.php");
 
-$username = $_POST['username'];
+$f_name = $_POST['f_name'];
+$l_name = $_POST['l_name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$check_user = $mysqli -> prepare('select * from users where username = ? or email = ?');
-$check_user->bind_param('ss', $username, $email);
+$check_user = $mysqli -> prepare('select * from users where email = ?');
+$check_user->bind_param('s', $email);
 $check_user->execute();
 $check_user->store_result();
 $user_exists = $check_user->num_rows();
 
-if ($user_exists == 0){
+if ($user_exists === 0){
   $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
-  $bank = 0;
-  $valid_booking = 0;
-
   $query = $mysqli->prepare('
-  insert into users (username, email, user_password, bank, valid_booking) 
-  values (?, ?, ?, ?, ?)');
-  $query->bind_param('sssii', $username, $email, $hashed_password, $bank, $valid_booking);
+  insert into users (user_id, email, password, f_name, l_name, education, experience, skills, bio) 
+  values (null, ?, ?, ?, ?, null, null, null, null)');
+  $query->bind_param('ssss', $email, $hashed_password, $f_name, $l_name);
   $query->execute();
   $response['status'] = "success";
-  $response['message'] = "user $username was created successfully";
+  $response['message'] = "user was created successfully";
 }else{
-  $response['status'] = "user already exists";
-  $response['message'] = "user $username wasn't created";
+  $response['status'] = "failed";
+  $response['message'] = "user already exists";
 }
 
 echo json_encode($response);

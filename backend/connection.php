@@ -1,13 +1,14 @@
 <?php
 
-header("Access-Control-Allow-Origin: http://127.0.0.1:5500");
+header("Access-Control-Allow-Origin: http:localhost:3000");
+header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST");
-header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 $host = "localhost";
 $db_user = "root";
 $db_pass = null;
-$db_name = "LinkedIn-db";
+$db_name = "linkedin_clone_db";
 
 $mysqli = new mysqli($host, $db_user, $db_pass, $db_name);
 

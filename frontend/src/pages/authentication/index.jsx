@@ -6,7 +6,8 @@ import Login from "./components/login/Login"
 
 
 
-const Authentication = () => {
+
+const Authentication = ({setUserId}) => {
   const navigate = useNavigate()
   const [isUserLogedIn, setIsUserLogedIn] = useState(false)
   const [isLogin, setIsLogin] = useState(true)
@@ -44,7 +45,7 @@ const Authentication = () => {
 
         try {
           const response = await fetch(
-            "http://127.0.0.1/LinkedIn-clone/backend/login.php",{
+            "http://localhost:4433/LinkedIn-clone/backend/signin.php",{
               method: "POST",
               body: formData
             }
@@ -53,10 +54,12 @@ const Authentication = () => {
 
           if(data.status !== "success"){
             setIncorrect(true)
+            
             setError("Incorrect Username or Password")
           }else{
             setIncorrect(false)
             setIsUserLogedIn(true)
+            setUserId(data.user_id)
             console.log(data.user_id)
             navigate("/Home")
           }
@@ -100,7 +103,7 @@ const Authentication = () => {
 
         try {
           const response = await fetch(
-            "http://127.0.0.1/LinkedIn-clone/backend/signup.php",{
+            "http://localhost:4433/LinkedIn-clone/backend/signup.php",{
               method: "POST",
               body: formData
             }

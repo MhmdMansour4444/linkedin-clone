@@ -2,7 +2,7 @@ import React from 'react';
 import './posts.css';
 
 
-const Post = ({ user, content, image }) => {
+const Post = ({ user, content, post_image }) => {
   return (
     <div className="post">
       <div className="post-header">
@@ -14,7 +14,7 @@ const Post = ({ user, content, image }) => {
       </div>
       <div className="post-content">
         <p>{content}</p>
-        {image && <img src={image} alt="Post Image" className="post-image" />}
+        {post_image && <img src={post_image} alt="Post Image" className="post-image" />}
       </div>
     </div>
   );
